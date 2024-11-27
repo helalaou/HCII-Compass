@@ -3,10 +3,7 @@ import { Box, Typography } from '@mui/material';
 import { useMessageLogic } from '../hooks/useMessageLogic';
 
 function Message({ text, sender, fontSize, fontFamily, letterSpacing, wordSpacing, oneSentencePerLine, sentenceSpacing }) {
-  const initialSettings = {
-    fontSize, fontFamily, letterSpacing, wordSpacing, oneSentencePerLine,
-    sentenceSpacing
-  };
+ 
 
   
   const {
