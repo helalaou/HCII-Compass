@@ -1,5 +1,6 @@
 .DS_STORE
 node_modules
+.venv
 scripts/flow/*/.flowconfig
 .flowconfig
 *~
@@ -25,7 +26,8 @@ chrome-user-data
 *.swo
 venv/
 .venv/
-
+venv/
+__pycache__/
 
 packages/react-devtools-core/dist
 packages/react-devtools-extensions/chrome/build
