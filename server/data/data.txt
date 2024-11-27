@@ -1,0 +1,158 @@
+Requirements
+*HCI Practice (Usability Skills) Requirement
+*“Apply for Funding” Requirement & its benefits
+*Communications Requirement (min. 2 talks)
+*Teaching Requirement (2 TAships)
+*Coursework- how to plan your studies
+*Thesis proposal and defense of a dissertation
+No exams, minors, foreign language, etc.
+
+HCI Practice / Usability Skills
+Need to demonstrate you know something about HCI practice (core usability) by:
+Taking full 05-610 UCRE class
+TAing 05-610 UCRE
+TAing 05-630 PUI (Programming Usable Interfaces)
+TAing 05-631 SUI (Software Structures for User Interfaces)
+Usability is core HCI practice, so having an HCI degree you’d    be expected to know it (e.g., for ugrad HCI course)
+
+Apply for funding
+Apply for a fellowship, help with grant-writing
+Benefits:  
+Provides practice in seeking funds. It is not necessary to actually receive the funds.  
+Requires you to learn how to succinctly and clearly describe your research goals. 
+If you do get the funding or an award, great for your CV and expands your reputation & network.
+If you receive a significant fellowship/scholarship, SCS adds a “bonus” to your stipend.
+It could help your Advisor and the department
+
+Communications Requirement
+Need to demonstrate competency in presenting research 
+At end of first and second years you’ll give a research talk on your work, open to all members of the Institute/SCS
+This is our subtle little nudge in starting you on research from day one
+
+Communications Requirement
+Full faculty attends and evaluates 
+Talk expected to meet expectations
+Standards are high
+Talks by current students are tomorrow & Wednesday (and on Oct 4)
+
+Teaching Requirement
+Two TAships for specific courses
+Hope to get you at least one substantive teaching assignment (i.e., more actual teaching)
+TAships are assigned to you and must be established / approved in advance
+-We try to take preferences into account & not assign TAships for which you don’t have skills
+-But need to cover certain courses, esp. required MHCI / BHCI
+-Teaching support / mentorship within HCII and at Eberly Center
+
+Rationale
+Pretty obvious if you are going into academia
+For industry: you still absolutely need the organizational and communications skills required by teaching
+
+Course Requirements 
+Designed to be highly individualized
+Best education for you
+Must take equivalent of  9 grad level courses (course = 9+ units)
+You can take more!  (probably should, probably will) 
+Typically take 2 courses per term
+Must get our permission to take more than 2 this first semester; better to take just 1 or 2.  
+Courses can be completed in 2 ½ years (w/o overload)
+But prerequisites, scheduling, and other factors may extend that period
+Four-One-One system most common but lots of room for flexibility
+
+Coursework (Four-One-One System)
+HCI Process & Theory (this fall)
+Four required breadth “minis” (½ semester 6 unit courses) 
+CS, Design, Social, Cognitive (Please take these your first two years) Social (05-772) & Computer Science (05-773) will be taught in Spring 2025
+Four courses in your primary area of concentration
+Behavioral, CS, or Design 
+One course in each of the other areas
+Detailed info about course requirements in the PhD Handbook (and 
+the Orientation folder!). List of courses that have been approved for requirements can be found here
+
+Some Details on Courses
+Transfer credits
+9 course residency requirement 
+Can transfer in courses to remove requirements, 	but still have the same total number of courses
+Prerequisites
+Things considered prerequisites don’t count towards the 9 courses
+Specifically: 
+Some intro design courses Intro programming courses
+Ask us about recommendations…
+
+But I Don’t Have an Advisor to Approve My Courses…
+… So, What Courses do I Take Right Now?
+Geoff is officially your academic advisor until you find one; Queenie is your university-listed advisor
+Both can help you with your decision this semester
+Ask advice of prospective advisors
+Also talk to existing students 
+They probably know the most about what is being offered
+
+Dissertation Committee
+Declaration of Committee Members
+Committee = advisor +  3 faculty members
+Three must be 3 HCI members
+Must be drawn from at least two different sub-disciplines
+One member must be “external”
+Outside HCI field, or in field but outside CMU
+Generally recommend outside CMU
+Role of committee members
+Proposal and defense judged by your committee
+Written and oral presentation of each
+
+Dissertation
+Original research
+Significant & novel
+preferably change the world, at least a little bit
+another characterization: when you are done, you should be the world’s leading authority in something
+Doable (and not too much risk)- scoping your research agenda
+
+All are fuzzy criteria 
+Your advisor will help you understand what makes a good / acceptable / not acceptable topic
+Other faculty, including committee members, can help too
+Let’s move around
+Family traditions, How do you spend your free time? What book or movie left a lasting impression on you?
+Evaluation (How do you/we tell if you are doing a good job?)
+
+Coursework
+Normal system of grades (A+, A, A-, B+, B, B-....)
+C+ is failing (only courses with B- or above can be counted towards required courses) 
+Courses that do not give letter grades (e.g.,  give “S” for satisfactory or “N” for not satisfactory) cannot count towards required courses. 
+Many courses are offered under both graduate and undergraduate course numbers. Register under the graduate level course number
+
+Courses are not the center of evaluation anymore
+You are smart folks; we expect you to do well in courses
+However, some funding sources require maintenance of specific QPA (e.g., 3.5 or above for ARCs)
+You can ace your courses and still not do well! 
+Evaluation covers all of your work to date, especially your research work
+Once you have completed your required courses (equivalent to 9 full semester courses), you want to take extra courses.  If the Instructor allows, you can opt to “audit” these or take them pass/fail
+
+Research
+Direct supervision and advice from your advisor working on real research projects
+Pretty much the same metrics as your advisor
+Publishing is good
+As a first-order metric “publishable work” or “leads to publishable work” is not a bad guide (but it’s not everything)
+(Eventually) building a reputation in the field
+HCI Process & Theory course will contain a lot about how to do and evaluate research
+
+Student evaluations
+You write a summary report of what you did
+Your advisor presents what you did to a meeting of the full HCII faculty, and we discuss it
+A short letter is drafted evaluating your progress
+If the first sentence contains “satisfactory progress” you are doing ok (or better), but if it also says “concern”, then not so much 
+The letter is really just a placeholder for discussion with your advisor.  
+These evaluations are sometimes as much about evaluating the advisor as the student
+
+Questions?
+All requirements covered in “the handbook”
+2024-25 version will be updated and shared at the beginning of the fall semester (most info in last year’s version is up-to-date)
+
+Guiding Principles
+Quality First
+Research from day one
+Contribute to a positive, respectful HCII community 
+“The Meta-Rule”
+
+The Meta-Rule
+“No rule is so important in and of itself that it should stand in the way of a student getting the best education”
+We can, will, and do bend and break the rules when it really serves a student’s best interests
+Doesn’t necessarily establish precedent (just because we did it for one does not imply all)
+

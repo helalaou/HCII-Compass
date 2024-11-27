@@ -1,14 +1,15 @@
 import axios from 'axios';
 import config from './config.js';
 
-export async function runOllama(prompt, timeout = config.llm.timeout) {
+export async function runOllama(prompt, context, timeout = config.llm.timeout) {
+  const formattedPrompt = `User Query: ${prompt}\nContext: ${context}\nAssistant:`;
   try {
-    console.log('Starting Ollama request with prompt:', prompt);
+    console.log('Starting Ollama request with prompt:', formattedPrompt);
     const response = await axios.post(
       config.server.ollamaApiUrl,
       {
         model: config.llm.model,
-        prompt: prompt,
+        prompt: formattedPrompt,
         stream: false,
       },
       { timeout: timeout }

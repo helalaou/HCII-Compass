@@ -2,6 +2,7 @@ const config = {
   server: {
     port: 3001,
     ollamaApiUrl: 'http://localhost:11434/api/generate',
+    faissApiUrl: 'http://localhost:8000',
   },
   client: {
     port: 3000,

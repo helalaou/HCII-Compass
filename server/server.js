@@ -19,11 +19,11 @@ const OLLAMA_API_URL = config.server.ollamaApiUrl;
 // Generate Response Route
 app.post('/generate', async (req, res) => {
   try {
-    const { text } = req.body;
+    const { text, context } = req.body;
     console.log('Received request to generate response');
 
     console.log('Running Ollama');
-    const generatedText = await runOllama(text);
+    const generatedText = await runOllama(text, context);
     console.log('Sending generated response');
     res.json({ generated_text: generatedText });
   } catch (error) {
@@ -36,6 +36,21 @@ app.post('/generate', async (req, res) => {
 app.get('/test', (req, res) => {
   console.log('Test route hit');
   res.json({ message: 'Server is working' });
+});
+
+// rag Query Route
+app.post('/rag-query', async (req, res) => {
+  try {
+    const { text } = req.body;
+    console.log('Received request to query FAISS');
+
+    const response = await axios.post(`${config.server.faissApiUrl}/query`, { query: text });
+    console.log('FAISS response received:', response.data);
+    res.json(response.data);
+  } catch (error) {
+    console.error('Error in /rag-query route:', error);
+    res.status(500).json({ error: 'An error occurred while querying FAISS.' });
+  }
 });
 
 // Start the server

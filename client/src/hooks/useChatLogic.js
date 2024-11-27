@@ -15,13 +15,22 @@ export function useChatLogic() {
       setIsLoading(true);
 
       try {
-        console.log('Sending message to backend');
-        const response = await axios.post(`${config.serverUrl}/generate`, {
+        console.log('Sending message to FAISS server');
+        const faissResponse = await axios.post(`${config.serverUrl}/rag-query`, {
           text: input,
         });
 
-        console.log('Received response from backend:', response.data);
-        const llmMessage = { text: response.data.generated_text, sender: 'llm' };
+        console.log('Received response from FAISS server:', faissResponse.data);
+        const { context, response } = faissResponse.data;
+
+        console.log('Sending message to backend with context');
+        const llmResponse = await axios.post(`${config.serverUrl}/generate`, {
+          text: input,
+          context: context,
+        });
+
+        console.log('Received response from backend:', llmResponse.data);
+        const llmMessage = { text: llmResponse.data.generated_text, sender: 'llm' };
         setMessages((prevMessages) => [...prevMessages, llmMessage]);
       } catch (error) {
         console.error('Error sending message to backend:', error);
