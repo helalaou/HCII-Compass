@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { useMessageLogic } from '../hooks/useMessageLogic';
-import { useSettingsLogic } from '../hooks/useSettingsLogic';
 
 function Message({ text, sender, fontSize, fontFamily, letterSpacing, wordSpacing, oneSentencePerLine, sentenceSpacing }) {
   const initialSettings = {
@@ -9,11 +8,10 @@ function Message({ text, sender, fontSize, fontFamily, letterSpacing, wordSpacin
     sentenceSpacing
   };
 
-  const { handleSimplify } = useSettingsLogic(initialSettings);
-
+  
   const {
     sentences,
-  } = useMessageLogic(text, handleSimplify, null);
+  } = useMessageLogic(text, null);
 
   const fontStyle = {
     fontFamily: fontFamily === 'OpenDyslexic' ? 'OpenDyslexic, sans-serif' : fontFamily,

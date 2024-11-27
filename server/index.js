@@ -1,7 +1,6 @@
 import express from 'express';
 import cors from 'cors';
 import axios from 'axios';
-import { SIMPLIFICATION_1, SIMPLIFICATION_2, SIMPLIFICATION_3, SIMPLIFICATION_4, SIMPLIFICATION_5 } from './prompts.js';
 import config from './config.js';
 
 const app = express();
