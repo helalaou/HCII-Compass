@@ -11,8 +11,7 @@ function ChatInterface({
   fontSize,
   fontFamily,
   letterSpacing,
-  wordSpacing,
-  oneSentencePerLine
+  wordSpacing
 }) {
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
@@ -37,7 +36,6 @@ function ChatInterface({
             fontFamily={fontFamily}
             letterSpacing={letterSpacing}
             wordSpacing={wordSpacing}
-            oneSentencePerLine={oneSentencePerLine}
           />
         ))}
         {isLoading && (

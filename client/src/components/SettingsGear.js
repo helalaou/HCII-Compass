@@ -11,10 +11,9 @@ function SettingsGear({
   fontFamily, onFontFamilyChange, 
   letterSpacing, onLetterSpacingChange, 
   wordSpacing, onWordSpacingChange, 
-  oneSentencePerLine, onOneSentencePerLineChange 
 }) {
   const initialSettings = {
-    fontSize, fontFamily, letterSpacing, wordSpacing, oneSentencePerLine
+    fontSize, fontFamily, letterSpacing, wordSpacing
   };
 
   const {
