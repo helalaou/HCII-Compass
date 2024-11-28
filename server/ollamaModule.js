@@ -14,6 +14,7 @@ export async function runOllama(prompt, context, history, timeout = config.llm.t
    Do not hallucinate or add extra information. Stick to the context that you are given. \n
    Write in a human-like language, in a friendly and engaging tone.\n
    Only introduce yourself if the user asks about you or if you are asked to introduce yourself or if they did not ask a question directly (ie: Hello, who are you, what is your name, etc.)\n
+   If the person provides you with their name, use it in your response but not excessively (if its important to the context, then use it, otherwise don't).
    If they ask you about something specific, answer it directly from the context given. You do not need to add extra information or ellaborate on the context. Just make sure whatever is in the context is presented in your response in a human language.\n 
    Respond in markdown format.
    ---------------------------

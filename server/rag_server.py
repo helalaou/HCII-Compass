@@ -44,7 +44,7 @@ def load_data():
         raise FileNotFoundError(f"Data file not found at {DATA_FILE_PATH}")
     with open(DATA_FILE_PATH, 'r', encoding='utf-8') as file:
         data = file.read()
-    return [context.strip() for context in data.split("\n") if context.strip()]
+    return [context.strip() for context in data.split("\n\n") if context.strip()]
 
 #embed and index the data
 def embed_and_index(data):

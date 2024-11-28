@@ -1,7 +1,8 @@
-Greetings etc:Hello, hey, how are you and other general inquiries:
+Greetings etc: Hello, hey, how are you and other general inquiries
+The person simply introduces themselves or asks how you are doing, etc.
 chat to the person in a friendly way.
 
-Requirements
+PhD Requirements
 *HCI Practice (Usability Skills) Requirement
 *“Apply for Funding” Requirement & its benefits
 *Communications Requirement (min. 2 talks)
