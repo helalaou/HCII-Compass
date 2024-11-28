@@ -2,6 +2,8 @@
 
 HCII Compass is a chatbot designed for students in the Human-Computer Interaction Institute (HCII) within the School of Computer Science (SCS) at Carnegie Mellon University (CMU). It simplifies access to campus and academic information by organizing scattered resources—handbooks, health services, financial policies, event calendars, and more—into easily searchable datasets. Using techniques like Retrieval-Augmented Generation (RAG) and FAISS for vector similarity search, the system employs multiple language models through Ollama and Sentence Transformers for handling chat, embedding, reranking, and more.
 
+![HCII Compass Screenshot](https://i.ibb.co/LQkccq1/Screenshot-2024-11-28-at-2-23-56-AM.png)
+
 ## Project Structure
 
 The project consists of a client-side React application and a server-side Node.js application that communicates with a FastAPI server for FAISS (Facebook AI Similarity Search) indexing and retrieval.
