@@ -3,15 +3,12 @@ import { Box, Typography } from '@mui/material';
 import { useMessageLogic } from '../hooks/useMessageLogic';
 import ReactMarkdown from 'react-markdown';
 
-function Message({ text, sender, fontSize, fontFamily, letterSpacing, wordSpacing, oneSentencePerLine, sentenceSpacing }) {
+function Message({ text, sender, wordSpacing }) {
   const {
     sentences,
   } = useMessageLogic(text, null);
 
   const fontStyle = {
-    fontFamily: fontFamily === 'OpenDyslexic' ? 'OpenDyslexic, sans-serif' : fontFamily,
-    fontSize: `${fontSize}px`,
-    letterSpacing: `${letterSpacing}px`,
     wordSpacing: `${wordSpacing}px`,
   };
 
@@ -30,42 +27,53 @@ function Message({ text, sender, fontSize, fontFamily, letterSpacing, wordSpacin
         marginLeft: sender === 'user' ? 'auto' : '0',
         position: 'relative',
         ...fontStyle,
+        '& p': {
+          margin: 0,
+          lineHeight: 1.2,
+        },
+        '& ul, & ol': {
+          margin: '0.05em 0',
+          padding: '0 1em',
+          lineHeight: 1.2,
+        },
+        '& li': {
+          margin: '0.05em 0',
+          lineHeight: 1.2,
+        },
+        '& blockquote': {
+          margin: '0.1em 0',
+          lineHeight: 1.2,
+        },
+        '& h1, & h2, & h3, & h4': {
+          margin: '0.05em 0',
+          lineHeight: 1.2,
+        },
       }}
     >
       {sender === 'llm' ? (
-        <ReactMarkdown 
-          components={{
-            p: ({ node, ...props }) => <Typography {...props} sx={{ margin: 0 }} />,
-            li: ({ node, ...props }) => <Typography component="li" {...props} sx={{ margin: '0.05em 0' }} />,
-            ul: ({ node, ...props }) => <Typography component="ul" {...props} sx={{ margin: '0.05em 0', padding: '0 1em' }} />,
-            ol: ({ node, ...props }) => <Typography component="ol" {...props} sx={{ margin: '0.05em 0', padding: '0 1em' }} />,
-            blockquote: ({ node, ...props }) => <Typography component="blockquote" {...props} sx={{ margin: '0.1em 0' }} />,
-            h1: ({ node, ...props }) => <Typography variant="h5" {...props} sx={{ margin: '0.05em 0' }} />,
-            h2: ({ node, ...props }) => <Typography variant="h6" {...props} sx={{ margin: '0.05em 0' }} />,
-            h3: ({ node, ...props }) => <Typography variant="subtitle1" {...props} sx={{ margin: '0.05em 0' }} />,
-            h4: ({ node, ...props }) => <Typography variant="subtitle2" {...props} sx={{ margin: '0.05em 0' }} />,
-          }}
-        >
+        <ReactMarkdown>
           {text}
         </ReactMarkdown>
       ) : (
         <Typography
           variant="body1"
           component="div"
-          sx={fontStyle}
+          sx={{
+            ...fontStyle,
+            lineHeight: 1.2,
+          }}
         >
           {sentences.map((sentence, index) => (
             <Box 
               key={index} 
               sx={{ 
-                display: oneSentencePerLine ? 'block' : 'inline', 
-                marginBottom: oneSentencePerLine ? `${sentenceSpacing * 0.5}em` : 0,
+                display: 'inline', 
                 position: 'relative',
                 transition: 'background-color 0.3s',
               }}
             >
               {sentence}
-              {!oneSentencePerLine && ' '}
+              {' '}
             </Box>
           ))}
         </Typography>

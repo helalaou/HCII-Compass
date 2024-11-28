@@ -1,19 +1,14 @@
-import { IconButton, Typography, Box, Slider, Popover, List, ListItem, ListItemText, Select, MenuItem, Divider } from '@mui/material';
+import { IconButton, Typography, Box, Slider, Popover, List, ListItem, ListItemText, Divider } from '@mui/material';
 import SettingsIcon from '@mui/icons-material/Settings';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useSettingsLogic } from '../hooks/useSettingsLogic';
 
-const fonts = ['Arial', 'Tahoma', 'Calibri', 'Verdana', 'Times New Roman', 'OpenDyslexic'];
-
 function SettingsGear({ 
-  fontSize, onFontSizeChange, 
-  fontFamily, onFontFamilyChange, 
-  letterSpacing, onLetterSpacingChange, 
-  wordSpacing, onWordSpacingChange, 
+  wordSpacing, onWordSpacingChange,
 }) {
   const initialSettings = {
-    fontSize, fontFamily, letterSpacing, wordSpacing
+    wordSpacing
   };
 
   const {
@@ -27,66 +22,15 @@ function SettingsGear({
   } = useSettingsLogic(initialSettings);
 
   const fontStyle = {
-    fontFamily: settings.fontFamily === 'OpenDyslexic' ? 'OpenDyslexic, sans-serif' : settings.fontFamily,
-    fontSize: `${settings.fontSize}px`,
-    letterSpacing: `${settings.letterSpacing}px`,
     wordSpacing: `${settings.wordSpacing}px`,
   };
 
   const renderMainView = () => (
     <List>
-      <ListItem button onClick={() => handleViewChange('fontSettings')} sx={{ cursor: 'pointer' }}>
-        <ListItemText primary="Font Settings" primaryTypographyProps={{ style: fontStyle }} />
-      </ListItem>
-      <Divider />
-      <ListItem button onClick={() => handleViewChange('textSpacing')} sx={{ cursor: 'pointer' }}>
+      <ListItem button onClick={() => handleViewChange('textSpacing')}>
         <ListItemText primary="Text Spacing" primaryTypographyProps={{ style: fontStyle }} />
       </ListItem>
     </List>
-  );
-
-  const renderFontSettings = () => (
-    <Box>
-      <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-        <IconButton onClick={() => handleViewChange('main')} size="small" sx={{ mr: 1, cursor: 'pointer' }}>
-          <ArrowBackIcon fontSize="small" />
-        </IconButton>
-        <Typography variant="h6" style={fontStyle}>Font Settings</Typography>
-      </Box>
-      <Divider sx={{ my: 2 }} />
-      <Typography gutterBottom style={fontStyle}>Font Size</Typography>
-      <Slider
-        value={settings.fontSize}
-        onChange={(_, newValue) => {
-          handleSettingChange('fontSize', newValue);
-          onFontSizeChange(newValue);
-        }}
-        aria-labelledby="font-size-slider"
-        valueLabelDisplay="auto"
-        step={1}
-        marks
-        min={12}
-        max={24}
-        sx={{ mb: 2 }}
-      />
-      <Divider sx={{ my: 2 }} />
-      <Typography gutterBottom style={fontStyle}>Font Family</Typography>
-      <Select
-        value={settings.fontFamily}
-        onChange={(e) => {
-          handleSettingChange('fontFamily', e.target.value);
-          onFontFamilyChange(e.target.value);
-        }}
-        fullWidth
-        sx={{ mb: 2, ...fontStyle }}
-      >
-        {fonts.map((font) => (
-          <MenuItem key={font} value={font} style={{ fontFamily: font === 'OpenDyslexic' ? 'OpenDyslexic, sans-serif' : font }}>
-            {font}
-          </MenuItem>
-        ))}
-      </Select>
-    </Box>
   );
 
   const renderTextSpacing = () => (
@@ -97,29 +41,6 @@ function SettingsGear({
         </IconButton>
         <Typography variant="h6" style={fontStyle}>Text Spacing</Typography>
       </Box>
-      <Divider sx={{ my: 2 }} />
-      <Typography gutterBottom style={fontStyle}>Letter Spacing</Typography>
-      <Slider
-        value={settings.letterSpacing}
-        onChange={(_, newValue) => {
-          handleSettingChange('letterSpacing', newValue);
-          onLetterSpacingChange(newValue);
-        }}
-        aria-labelledby="letter-spacing-slider"
-        valueLabelDisplay="auto"
-        step={0.1}
-        marks={[
-          { value: 0, label: '0' },
-          { value: 1, label: '1' },
-          { value: 2, label: '2' },
-          { value: 3, label: '3' },
-          { value: 4, label: '4' },
-          { value: 5, label: '5' },
-        ]}
-        min={0}
-        max={5}
-        sx={{ mb: 2 }}
-      />
       <Divider sx={{ my: 2 }} />
       <Typography gutterBottom style={fontStyle}>Word Spacing</Typography>
       <Slider
@@ -148,8 +69,6 @@ function SettingsGear({
 
   const renderContent = () => {
     switch (currentView) {
-      case 'fontSettings':
-        return renderFontSettings();
       case 'textSpacing':
         return renderTextSpacing();
       default:

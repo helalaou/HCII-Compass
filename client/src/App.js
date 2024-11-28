@@ -7,11 +7,7 @@ import { useChatLogic } from './hooks/useChatLogic';
 import logo from './logo.png';
 
 function App() {
-  const [fontSize, setFontSize] = useState(18);
-  const [fontFamily, setFontFamily] = useState('Arial');
-  const [letterSpacing, setLetterSpacing] = useState(0);
   const [wordSpacing, setWordSpacing] = useState(0);
-  const [oneSentencePerLine, setOneSentencePerLine] = useState(false);
 
   const {
     messages,
@@ -21,11 +17,7 @@ function App() {
     sendMessage,
   } = useChatLogic();
 
-  const handleFontSizeChange = (newSize) => setFontSize(newSize);
-  const handleFontFamilyChange = (newFont) => setFontFamily(newFont);
-  const handleLetterSpacingChange = (newSpacing) => setLetterSpacing(newSpacing);
   const handleWordSpacingChange = (newSpacing) => setWordSpacing(newSpacing);
-  const handleOneSentencePerLineChange = (newValue) => setOneSentencePerLine(newValue);
 
   return (
     <Container maxWidth="xl" disableGutters>
@@ -36,16 +28,8 @@ function App() {
             <span>HCII<span className="compass-effect" style={{ color: '#a12614' }}>Compass</span></span>
           </Box>
           <SettingsGear 
-            fontSize={fontSize} 
-            onFontSizeChange={handleFontSizeChange}
-            fontFamily={fontFamily}
-            onFontFamilyChange={handleFontFamilyChange}
-            letterSpacing={letterSpacing}
-            onLetterSpacingChange={handleLetterSpacingChange}
             wordSpacing={wordSpacing}
             onWordSpacingChange={handleWordSpacingChange}
-            oneSentencePerLine={oneSentencePerLine}
-            onOneSentencePerLineChange={handleOneSentencePerLineChange}
           />
         </Box>
         <ChatInterface
@@ -54,11 +38,7 @@ function App() {
           setInput={setInput}
           isLoading={isLoading}
           sendMessage={sendMessage}
-          fontSize={fontSize}
-          fontFamily={fontFamily}
-          letterSpacing={letterSpacing}
           wordSpacing={wordSpacing}
-          oneSentencePerLine={oneSentencePerLine}
         />
         <Box className="footer" sx={{ p: 2, borderTop: 1, borderColor: 'grey.300', backgroundColor: 'white' }}>
           <Typography variant="body2" color="text.secondary" align="center">
