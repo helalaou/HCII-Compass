@@ -21,7 +21,7 @@ export function useChatLogic() {
         });
 
         console.log('Received response from FAISS server:', faissResponse.data);
-        const { context, response } = faissResponse.data;
+        const { context } = faissResponse.data;
 
         console.log('Sending message to backend with context');
         const llmResponse = await axios.post(`${config.serverUrl}/generate`, {

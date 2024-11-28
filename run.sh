@@ -14,7 +14,6 @@ kill_ports() {
     done
 }
 
-# Kill processes on ports 3000 and 3001
 kill_ports 3000 3001
 
 # Start the FastAPI server for FAISS
@@ -30,7 +29,6 @@ npm install
 npm start &
 cd ..
 
-# Wait for the servers to start
 echo "Waiting for servers to start..."
 sleep 5
 
