@@ -42,22 +42,17 @@ Make sure to review and update these configuration files as needed, especially f
    cd HCII-Compass
    ```
 
-2. Install dependencies for the client and server:
+2. Run the `install.sh` script to install dependencies for the client, server, and set up the Python virtual environment:
    ```
-   cd client
-   npm install
-   cd ../server
-   npm install
+   ./install.sh
    ```
 
-3. Set up a Python virtual environment and install dependencies for the FastAPI server:
-   ```
-   cd server
-   python -m venv venv
-   source venv/bin/activate  # For Unix/Linux
-   # venv\Scripts\activate  # For Windows
-   pip install fastapi uvicorn faiss-cpu sentence-transformers
-   ```
+   This script will:
+   - Install dependencies for the client using `npm install`
+   - Install dependencies for the server using `npm install`
+   - Create a Python virtual environment (if not already created)
+   - Activate the virtual environment
+   - Install the required Python dependencies
 
 ## Running the Application
 
