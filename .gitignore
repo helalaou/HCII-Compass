@@ -44,3 +44,5 @@ packages/react-devtools-shell/dist
 packages/react-devtools-timeline/dist
 
 faiss_index.idx
+
+logs
