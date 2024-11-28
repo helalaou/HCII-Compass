@@ -4,7 +4,7 @@ import numpy as np
 from sentence_transformers import SentenceTransformer, util
 from pydantic import BaseModel
 import os
-from rag_config import EMBEDDING_MODEL, RERANKING_MODEL, DATA_FILE_PATH, FAISS_INDEX_PATH
+from rag_config import EMBEDDING_MODEL, RERANKING_MODEL, USE_RERANKER, DATA_FILE_PATH, FAISS_INDEX_PATH, NUM_RESULTS
 import logging
 from logging.handlers import RotatingFileHandler
 
@@ -13,7 +13,7 @@ app = FastAPI()
 embedding_model = SentenceTransformer(EMBEDDING_MODEL)
 reranking_model = SentenceTransformer(RERANKING_MODEL)
 
-# Configure logging
+#cnfigure logging
 logger = logging.getLogger('rag_server')
 logger.setLevel(logging.INFO)
 
@@ -44,7 +44,7 @@ def load_data():
         raise FileNotFoundError(f"Data file not found at {DATA_FILE_PATH}")
     with open(DATA_FILE_PATH, 'r', encoding='utf-8') as file:
         data = file.read()
-    return [context.strip() for context in data.split("\n\n") if context.strip()]
+    return [context.strip() for context in data.split("\n") if context.strip()]
 
 #embed and index the data
 def embed_and_index(data):
@@ -120,11 +120,10 @@ def process_query(query: Query):
     query_embedding = embedding_model.encode([query.query])
 
     # Retrieve top-N matches
-    top_n = 5
-    logger.info(f"Retrieving top {top_n} matches from FAISS index...")
-    distances, indices = faiss_index.search(query_embedding, top_n)
+    logger.info(f"Retrieving top {NUM_RESULTS} matches from FAISS index...")
+    distances, indices = faiss_index.search(query_embedding, NUM_RESULTS)
     
-    logger.info(f"Top {top_n} matches:")
+    logger.info(f"Top {NUM_RESULTS} matches:")
     for i, (idx, dist) in enumerate(zip(indices[0], distances[0]), start=1):
         if idx != -1:
             logger.info(f"{i}. Distance: {dist:.4f}, Text: {contexts[idx][:100]}...")
@@ -134,11 +133,12 @@ def process_query(query: Query):
     if not top_matches:
         raise HTTPException(status_code=404, detail="No matching context found.")
 
-    # rerank results
-    reranked_results = rerank_results(query.query, top_matches)
-
-    # Select the best match
-    best_match = reranked_results[0] if reranked_results else None
+    if USE_RERANKER:
+        # rerank results
+        reranked_results = rerank_results(query.query, top_matches)
+        best_match = reranked_results[0] if reranked_results else None
+    else:
+        best_match = top_matches[0]
 
     logger.info(f"Best matching context: {best_match[:100]}...")
     
