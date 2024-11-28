@@ -4,13 +4,14 @@ import numpy as np
 from sentence_transformers import SentenceTransformer, util
 from pydantic import BaseModel
 import os
-from rag_config import EMBEDDING_MODEL, DATA_FILE_PATH, FAISS_INDEX_PATH
+from rag_config import EMBEDDING_MODEL, RERANKING_MODEL, DATA_FILE_PATH, FAISS_INDEX_PATH
 import logging
 from logging.handlers import RotatingFileHandler
 
 app = FastAPI()
 
 embedding_model = SentenceTransformer(EMBEDDING_MODEL)
+reranking_model = SentenceTransformer(RERANKING_MODEL)
 
 # Configure logging
 logger = logging.getLogger('rag_server')
@@ -67,9 +68,9 @@ def embed_and_index(data):
 def rerank_results(query, candidates):
     logger.info(f"Reranking {len(candidates)} candidates...")
     
-    # Encode query and candidates
-    query_embedding = embedding_model.encode([query])
-    candidate_embeddings = embedding_model.encode(candidates)
+    # Encode query and candidates using reranking model
+    query_embedding = reranking_model.encode([query])
+    candidate_embeddings = reranking_model.encode(candidates)
 
     # Compute cosine similarity scores
     scores = util.cos_sim(query_embedding, candidate_embeddings).squeeze()
