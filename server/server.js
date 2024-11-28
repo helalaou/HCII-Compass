@@ -16,6 +16,8 @@ app.use(express.json());
 
 const OLLAMA_API_URL = config.server.ollamaApiUrl;
 
+let chatHistory = [];
+
 // Generate Response Route
 app.post('/generate', async (req, res) => {
   try {
@@ -23,8 +25,12 @@ app.post('/generate', async (req, res) => {
     console.log('Received request to generate response');
 
     console.log('Running Ollama');
-    const generatedText = await runOllama(text, context);
+    const generatedText = await runOllama(text, context, chatHistory);
     console.log('Sending generated response');
+    
+    chatHistory.push({role: 'user', content: text});
+    chatHistory.push({role: 'assistant', content: generatedText});
+    
     res.json({ generated_text: generatedText });
   } catch (error) {
     console.error('Error in /generate route:', error);
