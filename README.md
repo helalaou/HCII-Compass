@@ -68,11 +68,11 @@ To start all components of the application, run the `run.sh` script from the pro
 ```
 
 This script will:
-1. Create and activate a Python virtual environment (if not already created)
-2. Install the required Python dependencies
-3. Start the FastAPI server for FAISS
-4. Start the Node.js server
-5. Start the React application
+   - Create and activate a Python virtual environment (if not already created)
+   - Install the required Python dependencies
+   - Start the FastAPI server for FAISS
+   - Start the Node.js server
+   - Start the React application
 
 The application will be accessible at `http://localhost:3000`.
 
