@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Container, Box } from '@mui/material';
+import { Container, Box, Typography } from '@mui/material';
 import SettingsGear from './components/SettingsGear';
 import ChatInterface from './components/ChatInterface';
 import { useChatLogic } from './hooks/useChatLogic';
@@ -60,6 +60,11 @@ function App() {
           wordSpacing={wordSpacing}
           oneSentencePerLine={oneSentencePerLine}
         />
+        <Box className="footer" sx={{ p: 2, borderTop: 1, borderColor: 'grey.300', backgroundColor: 'white' }}>
+          <Typography variant="body2" color="text.secondary" align="center">
+            This system is AI-powered and may occasionally produce incorrect, biased, or incomplete results. Please use the information with discretion.
+          </Typography>
+        </Box>
       </Box>
     </Container>
   );
