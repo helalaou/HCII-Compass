@@ -1,3 +1,6 @@
+Greetings etc:Hello, hey, how are you and other general inquiries:
+chat to the person in a friendly way.
+
 Requirements
 *HCI Practice (Usability Skills) Requirement
 *“Apply for Funding” Requirement & its benefits
