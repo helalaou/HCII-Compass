@@ -82,11 +82,11 @@ To stop the application, press `[ENTER]` in the terminal where the `run.sh` scri
 
 ### Node.js Server
 
-The Node.js server (`server/server.js`) acts as an intermediary between the client application and the FastAPI server. It handles requests for generating responses using the Ollama language model and communicates with the FastAPI server for FAISS indexing and retrieval.
+The Node.js server (`server/server.js`) acts as an intermediary between the client application and the FastAPI server. It handles requests for generating responses using a language model via Ollama and communicates with the FastAPI server for FAISS indexing and retrieval.
 
 ### Ollama
 
-The Node.js server uses the Ollama for calling an LLM to generate responses based on a prompt containing the system prompt,user query, chat history, and RAG context. The default model used in this project is `llama3.2:3b-instruct-fp16`, which is a 3 billion parameter model fine-tuned for instruction following. The choice of the Ollama model can be configured in the `server/config.js` file by modifying the `llm.model` variable.
+The Node.js server uses Ollama for calling an LLM to generate responses based on a prompt containing the system prompt,user query, chat history, and RAG context. The default model used in this project is `llama3.2:3b-instruct-fp16`, which is a 3 billion parameter model fine-tuned for instruction following. The choice of the Ollama model can be configured in the `server/config.js` file by modifying the `llm.model` variable.
 
 ### FastAPI Server
 
