@@ -17,6 +17,8 @@ logger = logging.getLogger('rag_server')
 logger.setLevel(logging.INFO)
 
 # Create a rotating file handler
+if not os.path.exists('logs'):
+    os.makedirs('logs')
 handler = RotatingFileHandler('logs/logs.txt', maxBytes=1024*1024, backupCount=5, mode='a')
 handler.setLevel(logging.INFO)
 
