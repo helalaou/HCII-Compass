@@ -42,7 +42,12 @@ Make sure to review and update these configuration files as needed, especially f
    cd HCII-Compass
    ```
 
-2. Run the `install.sh` script to install dependencies for the client, server, and set up the Python virtual environment:
+2. Make the `install.sh` and `run.sh` scripts executable (for Unix-based systems (Linux, macOS) only):
+     ```
+     chmod +x install.sh
+     chmod +x run.sh
+     ```
+3. Run the `install.sh` script to install dependencies for the client, server, and set up the Python virtual environment:
    ```
    ./install.sh
    ```
